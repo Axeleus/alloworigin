@@ -4,7 +4,7 @@ import random
 
 class pytor:
     # pre define tor ports
-    ports = [9051, 9052, 9053, 9054, 9055]
+    ports = [9051]
     port = 0
     # init session
     session = requesocks.session()
