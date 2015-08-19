@@ -1,248 +1,113 @@
+<!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+<head>
+    <meta content="text/html; charset=utf-8" http-equiv="content-type">
     <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="">
-    <meta name="author" content="">
-    <script type="text/javascript" src="http://code.jquery.com/jquery-2.1.4.min.js"></script>
-    <script type="text/javascript" src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
-    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/prism/0.0.1/prism.min.js"></script>
-
-    <link rel="stylesheet" type="text/css" href="https://bootswatch.com/simplex/bootstrap.min.css">
-    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/prism/0.0.1/prism.min.css">
-    <link rel="stylesheet" type="text/css" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
-    <title>AllowOrigin.com</title>
+    <title>Bootply snippet - Bootply Bootstrap Preview</title>
+    <meta content="Bootply" name="generator">
+    <meta content="width=device-width, initial-scale=1, maximum-scale=1" name="viewport">
+    <meta content="" name="description">
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" rel="stylesheet">
     <style type="text/css">
-     .main{padding-top:50px;}
-     .voffset  { margin-top: 2px; }
-     .voffset1 { margin-top: 5px; }
-     .voffset2 { margin-top: 10px; }
-     .voffset3 { margin-top: 15px; }
-     .voffset4 { margin-top: 30px; }
-     .voffset5 { margin-top: 40px; }
-     .voffset6 { margin-top: 60px; }
-     .voffset7 { margin-top: 80px; }
-     .voffset8 { margin-top: 100px; }
-     .voffset9 { margin-top: 150px; }
+        /* CSS used here will be applied after bootstrap.css */
+        @import url(http://fonts.googleapis.com/css?family=Ubuntu);
+        * {
+            font-family: 'Ubuntu', sans-serif;
+        }
     </style>
-  </head>
+</head>
+<!-- HTML code from Bootply.com editor -->
+
 <body>
-    <nav class="navbar navbar-default navbar-fixed-top">
-      <div class="container">
-        <div class="navbar-header">
-          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
-            <span class="sr-only">Toggle navigation</span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-          </button>
-          <a class="navbar-brand" href="http://alloworigin.com">AllowOrigin.com</a>
-        </div>
-        <div id="navbar" class="navbar-collapse collapse">
-          <ul class="nav navbar-nav">
-            <li><a href="#home" tab="home" id="to_home">Home</a></li>
-            <li><a href="#examples" tab="examples" id="to_examples">Examples</a></li>
-            <li><a href="#usage" tab="usages" id="to_usages">Usages</a></li>
-            <li><a href="#donate" tab="donate" id="to_donate">Donate</a></li>
-          </ul>
-          <ul class="nav navbar-nav navbar-right">
-              <li><a href="https://github.com/limtaesu/alloworigin"><i class="fa-github fa"></i> Fork me on Github</a></li>
-          </ul>
-        </div><!--/.nav-collapse -->
-      </div>
-    </nav>
-
-    <div class="container main">
-      <!-- Tab panes -->
-       <div id="home" class="tabs">
-         <div class="jumbotron">
-           <h1 style="color:#000">AllowOrigin.com</h1>
-
-
-           <h3>What is AllowOrigin.com</h3>
-           add a simple gif.
-
-           <h3>Why not just use anyorigin.com?</h3>
-           Well, while anyorigin.com is closed source and not free<br>
-           AllowOrigin.com is open source and free to use.
-
-           <h3>Whateverorigin.org is open source and free, why use AllowOrigin.com?</h3>
-           whateverorigin.org is a good alternative to anyorigin.com,<br>
-           but it has not been maintained well, thus some basic functions remain broken<br>
-           AllowOrigin.com is an attempt to fix this.<br>
-           AllowOrigin.com is written in Django, so all of the Django community can participate in AllowOrigin.com<BR>
-          
-          <div class="voffset3 row"></div>
-           <span class="row voffset1">
-            <a class='btn btn-info btn-lg home_button' href="#examples" tab="examples">Examples</a>
-            <a class='btn btn-success btn-lg home_button' href="#donate" tab="donate">Usages</a>
-           </span>
-         </div>
-       </div>
-       <div id="examples" class="tabs hidden">
-        <div class="jumbotron">  
-        <div class="row">Example</div>
-          <div class="row">
-              <div class="col-md-6">
-              <span class="input-group">
-                <span class="input-group-addon" id="basic-addon1">Domain</span>
-                <input type="url" name="website" required class="form-control" placeholder="http://example.com" aria-describedby="basic-addon1" id="url">
-                <span class="input-group-btn">
-                  <button class="btn btn-default" type="button" id="run">Go!</button>
-                </span>
-              </span>
-              </div>
-          </div>
-          <div class="row">
-            <div class="col-md-6">
-              <label class="checkbox-inline">
-                <input type="checkbox" id="compress" value="option1"> use zlib compression base64 encoding
-              </label>
-              <label class="checkbox-inline">
-                <input type="checkbox" id="callback" value="option2"> use callback
-              </label>
-              <label class="checkbox-inline">
-                <input type="checkbox" id="tor" value="option3"> use tor
-              </label>
-            </div>
-          </div>
-        </div>    
-        
-        <div class="jumbotron hidden" id="jquery_code">
-        <div class="row">jQuery Code</div>
-        <pre id="jquery"></pre>
+    <img class="center-block img-responsive" src="http://i.imgur.com/wYDlaAB.png" width="150">
+    <div class="container">
+        <h2 id="h2-whatisit">What is it</h2>
+        <div class="col-md-12 well" id="whatisit">
+            A small attempt to liberates users from cross origin request blockage.
+            <br>
+            <br>
+            <b>what is the difference between anyorigin.com and
+            alloworigin.com?</b>
+            <br> Well, while alloworigin.com is open source and free to use,
+            <br> anyorigin.com is closed source and not free.
+            <br>
+            <br>
+            <b>whateverorigin.org is open source and free, why use
+            alloworigin.com?</b>
+            <br> whateverorigin.org is a good alternative to anyorigin.com, but
+            <br> it has not been maintained well, thus some basic functions remain
+            <a href="https://github.com/ripper234/Whatever-Origin/issues" target="_blank">broken</a>
+            <br> alloworigin.com is an attempt to fix this.
+            <br> alloworigin.com is written in Django,
+            <br> so all of the Django community can participate in alloworigin.com
         </div>
 
-        <div class="jumbotron hidden" id="json_object">
-        <div class="row">JSON object</div>
-          <iframe id="json" height="100%" width="100%"></iframe>
+        <h2 id="h2-usage">Usage</h2>
+
+        <div class="col-md-12 well" id="usage">
+            <b>basic usage</b>
+            <br>
+            <a href="http://alloworigin.com/get?url=http://example.com">http://alloworigin.com/get?url=http://example.com</a>
+            <br>
+
+            <br>
+            <b>with callback</b>
+            <br>
+            <a href="https://alloworigin.com/get?url=http://example.com&amp;callback=foo">
+            http://alloworigin.com/get?url=http://example.com&amp;callback=foo</a>
+            <br>
+
+            <br>
+            <b>anonymous request using tor, with
+            callback</b>
+            <br>
+            <a href="https://alloworigin.com/get?url=http://example.com&amp;callback=foo&amp;tor=1">
+            http://alloworigin.com/get?url=http://example.com&amp;callback=foo&amp;tor=1</a>
+            <br>
+
+            <br>
+            <b>enable base64 zlib, utf8 compatible
+            compression</b>
+            <br>
+            <a href="https://alloworigin.com/get?url=http://example.com&amp;compress=1">
+            http://alloworigin.com/get?url=http://example.com&amp;compress=1</a>
         </div>
 
+        <h2 id="h2-examples">Examples</h2>
 
+        <div class="col-md-12 well" id="examples">
+            <a>1. Alert me when some word is found on a
+            webpage</a>
+            <br>
+            <a>2. Email me when some word is found on a
+            webpage</a>
+            <br>
+        </div>
 
+        <h2 id="h2-donations">Donations</h2>
 
-       </div>
-       <div id="usages" class="tabs hidden">789</div>
-       <div id="donate" class="tabs hidden">000</div>
+        <div class="col-md-12 well" id="donations">
+            Help me keep this service up and running by donating!
+            <br> Paypal &amp; Bitcoin
+        </div>
     </div>
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js" type='text/javascript'></script>
+    <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js" type='text/javascript'></script>
+    <!-- JavaScript jQuery code from Bootply.com editor  -->
+    <script type='text/javascript'>
+        $(document).ready(function() {
 
-    <script type="text/javascript">
-      $(function() {
-        $('a.home_button').click(function(event) {
-          var tab = $(this).attr('tab');
-          $('#to_'+tab).click();
+            $(function() {
+                $('.well').hide();
+                $('#whatisit').show();
+                $('h2').click(function(e) {
+                    $('.well').hide();
+                    var thisid = $(this).attr('id');
+                    var div = '#' + thisid.replace('h2-', '');
+                    $(div).show();
+                });
+            });
         });
-
-        $('ul.nav li a').click(function(event) {
-          $('ul.nav li').removeClass('active');
-          $(this).parent('li').addClass('active');
-          var tab = $(this).attr('tab');
-          $('.tabs').addClass('hidden');
-          $('div#'+tab).removeClass('hidden');
-        });
-
-        function isUrlValid(url) {
-            return /^(https?|s?ftp):\/\/(((([a-z]|\d|-|\.|_|~|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])|(%[\da-f]{2})|[!\$&'\(\)\*\+,;=]|:)*@)?(((\d|[1-9]\d|1\d\d|2[0-4]\d|25[0-5])\.(\d|[1-9]\d|1\d\d|2[0-4]\d|25[0-5])\.(\d|[1-9]\d|1\d\d|2[0-4]\d|25[0-5])\.(\d|[1-9]\d|1\d\d|2[0-4]\d|25[0-5]))|((([a-z]|\d|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])|(([a-z]|\d|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])([a-z]|\d|-|\.|_|~|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])*([a-z]|\d|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])))\.)+(([a-z]|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])|(([a-z]|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])([a-z]|\d|-|\.|_|~|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])*([a-z]|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])))\.?)(:\d*)?)(\/((([a-z]|\d|-|\.|_|~|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])|(%[\da-f]{2})|[!\$&'\(\)\*\+,;=]|:|@)+(\/(([a-z]|\d|-|\.|_|~|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])|(%[\da-f]{2})|[!\$&'\(\)\*\+,;=]|:|@)*)*)?)?(\?((([a-z]|\d|-|\.|_|~|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])|(%[\da-f]{2})|[!\$&'\(\)\*\+,;=]|:|@)|[\uE000-\uF8FF]|\/|\?)*)?(#((([a-z]|\d|-|\.|_|~|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])|(%[\da-f]{2})|[!\$&'\(\)\*\+,;=]|:|@)|\/|\?)*)?$/i.test(url);
-        }
-
-        function start(){
-          var url = $('#url').val();
-          if (!isUrlValid(url)){
-            // show error
-            return;
-          }
-          make_jquery_code(url)
-          Prism.highlightAll();
-          get_json(url);
-          $('#jquery_code, #json_object').removeClass('hidden');
-        }
-
-        function make_jquery_code(url){
-          var compress = $('#compress').is(":checked");
-          var tor = $('#tor').is(":checked");
-          var callback = $('#callback').is(":checked");
-
-          if (compress === true){
-            compress = '&compress=1'
-          }else{
-            compress = ''
-          }
-
-          if (tor === true){
-            tor = '&tor=1'
-          }else{
-            tor = ''
-          }
-
-          if (callback === true){
-            callback = '&callback=foo'
-          }else{
-            callback = '&callback=?'
-          }
-
-          var html = [
-          '<code class="language-javascript">$.getJSON("http://alloworigin.com/get?url=" + encodeURIComponent("'+url+'") + "'+callback+compress+tor+'", function(data){\n',
-          '  alert(data.contents);\n',
-          '});</code>'
-          ].join('');
-
-          $('#jquery').html(html);
-        }
-
-        function get_json(url){
-          var compress = $('#compress').is(":checked");
-          var tor = $('#tor').is(":checked");
-          var callback = $('#callback').is(":checked");
-
-          if (compress === true){
-            compress = '&compress=1'
-          }else{
-            compress = ''
-          }
-
-          if (tor === true){
-            tor = '&tor=1'
-          }else{
-            tor = ''
-          }
-
-          if (callback === true){
-            callback = '&callback=foo'
-          }else{
-            callback = '&callback=?'
-          }
-
-          url = "http://alloworigin.com/get?url=" + encodeURIComponent(url) +callback+compress+tor;
-          $.getJSON(url, function(data) {
-
-            var d = $("#json")[0].contentWindow.document; // contentWindow works in IE7 and FF
-             d.open(); d.close(); // must open and close document object to start using it!
-
-             // now start doing normal jQuery:
-             $("body", d).append(data.contents);
-          });
-
-        }
-
-
-        $('#run').click(function(event) {
-          start();
-        });
-        $('#url').bind("enterKey",function(e){
-          start();
-
-        });
-        $('#url').keyup(function(e){
-            if(e.keyCode == 13)
-            {
-                $(this).trigger("enterKey");
-            }
-        });
-
-      });
     </script>
-</body></html>
-
-
+</body>
+</html>
