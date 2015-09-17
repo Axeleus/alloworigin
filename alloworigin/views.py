@@ -21,6 +21,10 @@ def get(request):
         tor = request.GET.get('tor', '')
         compress = request.GET.get('compress', '')
 
+    # ask for premium
+    if 'hearthpwn.com' in url:
+        return HttpResponse('too much request from this domain. contact admin@alloworigin.com for premium tier service')
+
     # check valid url starts here
     if url != '' and url != 'http://alloworigin.com' and url != 'http://www.alloworigin.com':
         validate = URLValidator()
