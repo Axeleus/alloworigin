@@ -9,11 +9,17 @@ import json
 from pytor import pytor
 from datetime import datetime, timedelta
 
+
+origin = 'http://www.alloworigin.com'
+
+
 def index(request):
     return render_to_response('index.html')
 
+
 def is_abuse(ip, url):
-    recents = Request.objects.filter(date__gt=(datetime.now() -timedelta(seconds=5) ) )
+    recent_date = (datetime.now() - timedelta(seconds=5))
+    recents = Request.objects.filter(date__gt=recent_date)
     for request in recents:
         if request.ip == ip or request.dest == url:
             return True
@@ -28,9 +34,8 @@ def get(request):
         tor = request.GET.get('tor', '')
         compress = request.GET.get('compress', '')
 
-
     # check valid url starts here
-    if url != '' and url != 'http://alloworigin.com' and url != 'http://www.alloworigin.com':
+    if url != '' and url != origin.replace('www', '') and url != origin:
         validate = URLValidator()
     else:
         return HttpResponse('invalid url')
@@ -42,9 +47,8 @@ def get(request):
     # check valid url ends here
 
     # check if within 10 seconds from now, the same url has been requested
-    if is_abuse(get_client_ip(request),url):
+    if is_abuse(get_client_ip(request), url):
         return HttpResponse('rate limited. 1 request per 5 seconds.')
-
 
     # request
     try:
