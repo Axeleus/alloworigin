@@ -35,7 +35,7 @@ def get(request):
         compress = request.GET.get('compress', '')
 
     # check valid url starts here
-    if url != '' and url != origin.replace('www', '') and url != origin:
+    if url != '' and url != origin.replace('www.', '') and url != origin:
         validate = URLValidator()
     else:
         return HttpResponse('invalid url')
