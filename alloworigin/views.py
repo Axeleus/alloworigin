@@ -7,10 +7,17 @@ from django.core.exceptions import ValidationError
 import requests
 import json
 from pytor import pytor
-
+from datetime import datetime, timedelta
 
 def index(request):
     return render_to_response('index.html')
+
+def is_abuse(ip, url):
+    recents = Request.objects.filter(date__gt=(datetime.now() -timedelta(seconds=5) ) )
+    for request in recents:
+        if request.ip == ip or request.dest == url:
+            return True
+    return False
 
 
 @csrf_exempt
@@ -21,9 +28,6 @@ def get(request):
         tor = request.GET.get('tor', '')
         compress = request.GET.get('compress', '')
 
-    # ask for premium
-    if 'hearthpwn.com' in url:
-        return HttpResponse('too much request from this domain. contact admin@alloworigin.com for premium tier service')
 
     # check valid url starts here
     if url != '' and url != 'http://alloworigin.com' and url != 'http://www.alloworigin.com':
@@ -36,6 +40,11 @@ def get(request):
     except ValidationError:
         return HttpResponse('invalid url')
     # check valid url ends here
+
+    # check if within 10 seconds from now, the same url has been requested
+    if is_abuse(get_client_ip(request),url):
+        return HttpResponse('rate limited. 1 request per 5 seconds.')
+
 
     # request
     try:
