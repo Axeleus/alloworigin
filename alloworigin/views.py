@@ -10,9 +10,6 @@ from pytor import pytor
 from datetime import datetime, timedelta
 
 
-origin = 'http://www.alloworigin.com'
-
-
 def index(request):
     return render_to_response('index.html')
 
@@ -33,6 +30,9 @@ def get(request):
         callback = request.GET.get('callback', '')
         tor = request.GET.get('tor', '')
         compress = request.GET.get('compress', '')
+        origin = 'http://www.alloworigin.com'
+    else:
+        return HttpResponse('invalid request')
 
     # check valid url starts here
     if url != '' and url != origin.replace('www.', '') and url != origin:
